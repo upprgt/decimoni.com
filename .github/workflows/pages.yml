@@ -1,45 +1,44 @@
-name: pages (vite build + deploy)
+name: pages
 
 on:
   push:
     branches: [ main ]
+  workflow_dispatch:
 
+# this is the magic. without it, deploy-pages returns 404.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout
-        uses: actions/checkout@v4
-
-      - name: setup node
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: "20"     # Vite needs Node 20+
-
-      - name: install deps
-        run: npm ci
-
-      - name: build
-        run: npm run build
-
-      - name: copy CNAME if present
-        run: |
-          if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
-          if [ -f public/CNAME ]; then cp public/CNAME dist/CNAME; fi
-
-      - name: upload pages artifact
-        uses: actions/upload-pages-artifact@v4
+          node-version: 20
+      - run: corepack enable
+      - run: npm ci
+      - run: npm run build
+      # tells pages how to serve the artifact
+      - uses: actions/configure-pages@v5
+      # upload the vite build output (change if your out dir isn’t dist)
+      - uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist
+          path: dist
 
   deploy:
-    needs: build-deploy
+    needs: build
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - name: deploy to pages
-        uses: actions/deploy-pages@v1
+      - id: deployment
+        uses: actions/deploy-pages@v4
