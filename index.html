@@ -1,17 +1,20 @@
-﻿<!doctype html>
-<html lang="pt-br">
+<!doctype html>
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>decimoni dataworks</title>
+  <title>Decimoni Dataworks</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <style>html,body{background:#050407;color:#e6e6e6}a{color:inherit}</style>
+  <style>
+    html,body { background:#050407; color:#e6e6e6 }
+    a { color: inherit }
+  </style>
 </head>
 <body class="antialiased">
-  <main class="max-w-5xl mx-auto p-6">
+  <main class="max-w-7xl mx-auto p-6">
     <header class="flex items-center justify-between mb-8">
       <div class="flex items-center gap-3">
-        <svg viewBox="0 0 64 64" class="h-10 w-10 text-amber-400" fill="none" stroke="currentColor" stroke-width="3">
+        <svg viewBox="0 0 64 64" class="h-10 w-10 text-amber-400" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
           <path d="M32 4 58 19v26L32 60 6 45V19z"></path>
           <path d="M24 24v16l8 5 8-5V24l-8-5-5 3"></path>
         </svg>
@@ -20,7 +23,8 @@
           <div class="text-xs text-neutral-400">automação • dados • indústria 4.0</div>
         </div>
       </div>
-      <nav class="hidden sm:flex gap-4 text-sm text-neutral-300">
+
+      <nav class="hidden sm:flex gap-6 text-sm text-neutral-300">
         <a href="#services">serviços</a>
         <a href="#results">números</a>
         <a href="#process">como funciona</a>
@@ -28,31 +32,167 @@
       </nav>
     </header>
 
+    <!-- HERO -->
     <section class="grid md:grid-cols-2 gap-8 items-center mb-12">
       <div>
         <p class="text-amber-400 uppercase text-xs tracking-wider">automação • dados • indústria 4.0</p>
-        <h1 class="mt-4 text-3xl font-bold leading-tight">a sua fábrica merece menos planilha e mais dinheiro</h1>
-        <p class="mt-4 text-neutral-300">cortamos burocracia, integramos sistemas e fazemos seus fluxos rodarem sozinhos. você trabalha no que importa.</p>
-        <div class="mt-6 flex gap-3">
-          <a class="inline-block bg-amber-400 text-black rounded-lg px-4 py-2" href="https://wa.me/5511000000000?text=oi">💬 falar no whatsapp</a>
+        <h1 class="mt-4 text-4xl md:text-5xl font-bold leading-tight">a sua fábrica merece menos planilha e mais dinheiro</h1>
+        <p class="mt-4 text-neutral-300 max-w-xl">
+          cortamos burocracia, integramos sistemas e fazemos seus fluxos rodarem sozinhos. você trabalha no que importa.
+        </p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a class="inline-block bg-amber-400 text-black rounded-lg px-4 py-2" href="https://wa.me/5511964493301?text=Oi%20Decimoni%20Dataworks%2C%20quero%20automatizar%20meu%20neg%C3%B3cio.">💬 falar no whatsapp</a>
           <a class="inline-block border border-neutral-700 text-neutral-100 rounded-lg px-4 py-2" href="#contact">📞 agendar call</a>
         </div>
+        <ul class="mt-6 flex flex-wrap gap-2 text-xs text-neutral-400">
+          <li class="px-2 py-1 bg-neutral-900 rounded">python</li>
+          <li class="px-2 py-1 bg-neutral-900 rounded">power bi</li>
+          <li class="px-2 py-1 bg-neutral-900 rounded">sharepoint</li>
+          <li class="px-2 py-1 bg-neutral-900 rounded">sap / mes</li>
+          <li class="px-2 py-1 bg-neutral-900 rounded">postgres</li>
+        </ul>
       </div>
+
       <div class="rounded-xl bg-neutral-900 p-6 border border-neutral-800">
         <h3 class="font-semibold mb-2">exemplo rápido</h3>
         <p class="text-sm text-neutral-300">fluxo: sap → postgres → scripts python → power bi → notificações. ajeitamos esse motor pra você.</p>
       </div>
     </section>
 
+    <!-- SERVICES -->
+    <section id="services" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6">o que entregamos de verdade</h2>
+      <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-xl bg-neutral-800">🔁</div>
+            <div class="text-amber-400 font-semibold">automação de processos</div>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">power automate, python, sap, sharepoint — tudo conversando e reduzindo trabalho manual.</p>
+        </div>
+
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-xl bg-neutral-800">📊</div>
+            <div class="text-amber-400 font-semibold">dashboards que decidem</div>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">KPIs em tempo real no Power BI sobre dados limpos e versionados.</p>
+        </div>
+
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-xl bg-neutral-800">🤖</div>
+            <div class="text-amber-400 font-semibold">assistentes de IA úteis</div>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">chatbots e copilotos que fazem trabalho, não só conversam.</p>
+        </div>
+
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-xl bg-neutral-800">⚙️</div>
+            <div class="text-amber-400 font-semibold">scheduling & MES</div>
+          </div>
+          <p class="mt-3 text-sm text-neutral-300">or-tools, heurísticas e integração com chão de fábrica.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <section id="results" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6">números que importam</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6">
+          <div class="text-3xl font-semibold text-amber-400">R$ 2.000.000+</div>
+          <div class="mt-2 text-neutral-400 text-sm">economia estimada em projetos</div>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6">
+          <div class="text-3xl font-semibold text-amber-400">5000+</div>
+          <div class="mt-2 text-neutral-400 text-sm">horas manuais evitadas</div>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6">
+          <div class="text-3xl font-semibold text-amber-400">&lt; 90 dias</div>
+          <div class="mt-2 text-neutral-400 text-sm">payback típico</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section id="process" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6">como funciona</h2>
+      <ol class="grid gap-6 md:grid-cols-3">
+        <li class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">diagnóstico relâmpago</div>
+          <p class="mt-2 text-sm text-neutral-300">1–2 reuniões. mapeamos fluxo e dor real.</p>
+        </li>
+        <li class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">piloto simples</div>
+          <p class="mt-2 text-sm text-neutral-300">prova em semanas com métrica de sucesso clara.</p>
+        </li>
+        <li class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">escala sem drama</div>
+          <p class="mt-2 text-sm text-neutral-300">sobe pra produção, monitora e documenta.</p>
+        </li>
+      </ol>
+    </section>
+
+    <!-- PRICING (simple) -->
+    <section id="pricing" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6">planos sem enrolação</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6">
+          <div class="flex items-center justify-between"><div class="font-semibold capitalize">starter</div><div class="text-2xl">sob consulta</div></div>
+          <ul class="mt-4 text-sm text-neutral-300 space-y-2">
+            <li>diagnóstico + blueprint</li>
+            <li>1 automação ou 1 dashboard</li>
+            <li>suporte 30 dias</li>
+          </ul>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6 ring-1 ring-amber-400/40">
+          <div class="flex items-center justify-between"><div class="font-semibold capitalize">pro</div><div class="text-2xl">sob consulta</div></div>
+          <ul class="mt-4 text-sm text-neutral-300 space-y-2">
+            <li>tudo do starter</li>
+            <li>integrações (sap/sharepoint/postgres)</li>
+            <li>scheduling básico</li>
+          </ul>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-6">
+          <div class="flex items-center justify-between"><div class="font-semibold capitalize">enterprise</div><div class="text-2xl">sob consulta</div></div>
+          <ul class="mt-4 text-sm text-neutral-300 space-y-2">
+            <li>arquitetura completa de dados</li>
+            <li>monitoramento e sso</li>
+            <li>scheduling avançado</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="mb-12">
+      <h2 class="text-2xl font-semibold mb-6">perguntas que você teria no café</h2>
+      <div class="grid gap-6 md:grid-cols-3">
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">vocês trabalham só com indústria?</div>
+          <p class="mt-2 text-sm text-neutral-300">indústria é nossa praia, mas já ajudamos serviços e varejo.</p>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">quanto tempo pra ver resultado?</div>
+          <p class="mt-2 text-sm text-neutral-300">em 2–6 semanas um piloto costuma gerar valor medível.</p>
+        </div>
+        <div class="rounded-lg border border-neutral-800 bg-neutral-900 p-4">
+          <div class="font-semibold text-amber-400">é caro?</div>
+          <p class="mt-2 text-sm text-neutral-300">fica barato quando comparado com horas perdidas. payback < 90 dias é comum.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
     <section id="contact" class="mb-12">
       <h2 class="text-2xl font-semibold mb-4">contato</h2>
-      <div class="grid sm:grid-cols-2 gap-6">
-        <div class="rounded-xl bg-neutral-900 p-6 border border-neutral-800">
-          <p class="text-neutral-300">fale com a gente via whatsapp ou e-mail — escolhe o que for mais prático pra você.</p>
-          <div class="mt-4 flex gap-3">
-            <a class="inline-block bg-amber-400 text-black rounded-lg px-4 py-2" href="https://wa.me/5511000000000">💬 whatsapp</a>
-            <a class="inline-block border border-neutral-700 text-neutral-100 rounded-lg px-4 py-2" href="mailto:eduardo@decimoni.com">✉️ eduardo@decimoni.com</a>
-          </div>
+      <div class="rounded-xl bg-neutral-900 p-6 border border-neutral-800">
+        <p class="text-neutral-300">fale com a gente via whatsapp ou e-mail — escolha o que for mais prático pra você.</p>
+        <div class="mt-4 flex gap-3">
+          <a class="inline-block bg-amber-400 text-black rounded-lg px-4 py-2" href="https://wa.me/5511964493301">💬 whatsapp</a>
+          <a class="inline-block border border-neutral-700 text-neutral-100 rounded-lg px-4 py-2" href="mailto:eduardo@decimoni.com">✉️ eduardo@decimoni.com</a>
         </div>
       </div>
     </section>
@@ -60,7 +200,10 @@
     <footer class="border-t border-neutral-800 pt-6 text-sm text-neutral-400">
       <div class="flex items-center justify-between">
         <div>© 2025 decimoni dataworks</div>
-        <div class="flex gap-4"><a href="mailto:eduardo@decimoni.com">eduardo@decimoni.com</a><a href="https://wa.me/5511000000000">whatsapp</a></div>
+        <div class="flex gap-4">
+          <a href="mailto:eduardo@decimoni.com">eduardo@decimoni.com</a>
+          <a href="https://wa.me/5511964493301">whatsapp</a>
+        </div>
       </div>
     </footer>
   </main>
