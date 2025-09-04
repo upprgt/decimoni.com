@@ -1,4 +1,4 @@
-name: github pages (build & deploy)
+﻿name: pages (vite build + deploy)
 
 on:
   push:
@@ -27,17 +27,19 @@ jobs:
       - name: build
         run: npm run build
 
-      - name: copy CNAME (if exists)
+      - name: copy CNAME if present
         run: |
           if [ -f CNAME ]; then cp CNAME dist/CNAME; fi
+          if [ -f public/CNAME ]; then cp public/CNAME dist/CNAME; fi
 
-      - name: configure pages
-        uses: actions/configure-pages@v3
-
-      - name: upload artifact
+      - name: upload pages artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./dist
 
-      - name: deploy to github pages
+  deploy:
+    needs: build-deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploy to pages
         uses: actions/deploy-pages@v1
