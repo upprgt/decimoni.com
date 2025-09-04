@@ -33,7 +33,7 @@ jobs:
           if [ -f public/CNAME ]; then cp public/CNAME dist/CNAME; fi
 
       - name: upload pages artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
