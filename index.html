@@ -20,6 +20,44 @@
 
   gtag('config', 'AW-16526119502');
 </script>
+
+  <script>
+(function () {
+  // replace these with the exact send_to strings from each conversion
+  const SEND_TO_WHATS = 'AW-16526119502/WHATS_LABEL';
+  const SEND_TO_EMAIL = 'AW-16526119502/EMAIL_LABEL';
+
+  function fire(sendTo, href, openInNew) {
+    let done = false;
+    const go = () => {
+      if (done) return; done = true;
+      if (!href) return;
+      if (openInNew) window.open(href, '_blank'); else location.href = href;
+    };
+    // fire ads conversion and then navigate
+    gtag('event', 'conversion', { send_to: sendTo, event_callback: go });
+    setTimeout(go, 500); // fallback so we still navigate if gtag lags
+  }
+
+  document.addEventListener('click', function (e) {
+    const a = e.target.closest && e.target.closest('a[href]');
+    if (!a) return;
+
+    const href = a.getAttribute('href') || '';
+    const openInNew = a.target === '_blank' || e.metaKey || e.ctrlKey || e.shiftKey || e.button === 1;
+
+    // whatsapp links
+    const isWhats = /^(https?:\/\/)?(wa\.me|api\.whatsapp\.com|w\.app|web\.whatsapp\.com)\//i.test(href)
+                    || /^whatsapp:\/\//i.test(href);
+
+    // email links
+    const isMail = /^mailto:/i.test(href);
+
+    if (isWhats) { e.preventDefault(); fire(SEND_TO_WHATS, href, openInNew); }
+    if (isMail)  { e.preventDefault(); fire(SEND_TO_EMAIL, href, openInNew); }
+  });
+})();
+</script>
 <body class="antialiased">
   <main class="max-w-7xl mx-auto p-6">
     <header class="flex items-center justify-between mb-8">
